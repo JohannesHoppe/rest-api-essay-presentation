@@ -40,6 +40,16 @@
         width: 48%;
         float: right;
       }
+      
+      .remark-container {
+        background: white;
+      }
+      
+      .remark-slide-scaler {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
     </style>
   </head>
   <body>
@@ -50,137 +60,19 @@ class: center, middle
 # REST APIs Today and Tomorrow
 ## an Essay
 
-Thomas Hoppe in 2015
+text created by [Thomas Hoppe](https://github.com/vanthome/rest-api-essay-presentation) in 2015  
+changed by [Johannes Hoppe](https://github.com/JohannesHoppe/rest-api-essay-presentation) in 2016
 
 ---
 
 # Contents
 
-1. Relevance of Web APIs
-2. History of distributed System Integration Paradigms
-3. What actually is REST?
-4. The Semantic Web
-5. Linked Data
-6. JSON-LD
-7. Hydra Core
+1. [What actually is REST?](#3)
+2. [The Semantic Web](#20)
+3. [Linked Data](#35)
+4. [JSON-LD](#42)
+5. [Hydra Core](#50)
 
----
-
-class: center, middle
-
-# Relevance of Web APIs
-
----
-
-# Relevance of Web APIs
-
-**API First!**
-<br>
-<small>
-It's no longer Web first or mobile first.
-</small>
-
-<br><br>
-**We live in an _API Economy_.** [1][1]
-
-<br><br>
-**The _Chief API Officer_ term is coined.** [2][2]
-
-<br><br>
-**If it's not programmable, it doesn't exist.**
-<br>
-<small>
-by me :)
-</small>
-
-
-[1]: http://www.forbes.com/sites/ciocentral/2012/08/29/welcome-to-the-api-economy/
-[2]: http://www.citeworld.com/article/2115558/development/chief-api-officer.html
----
-
-class: center, middle
-
-# History of distributed System Integration Paradigms
-
----
-
-# Non-scientific enumeration of past Hypes
-
-- Integrated via asynchronous messaging (MQ).
-  - Popular when mainframes were hip.
-
-- Remote Procedure Calls (RPC).
-  - Often with CORBA as a protocol.
-
-- Service Oriented Architecture (SOA).
-  - Still popular in enterprise IT but irrelevant for mobile computing.
-  - Although not mandated, the integration protocol of choice in SOAs is/ was SOAP/HTTP and SOAP via asynchronous protocols.
-
-- Pseudo-REST APIs ‒ <span class="red">today<span>.
-  - "pseudo" because they do not fulfill all of the commonly accepted criteria of a REST API.
-
----
-
-# Prospected Future
-
-- REST APIs ‒ **approaching**.
-
-- Semantic REST APIs ‒ **future**.
-
-Both are further elaborated below.
-
----
-
-# SOA vs. REST (1/2)
-
-Google trends for the terms _SOAP API_ and _REST API_:
-
-<iframe src="//www.google.com/trends/fetchComponent?hl=en-US&amp;q=soap+api,+rest+api&amp;cmpt=q&amp;content=1&amp;cid=TIMESERIES_GRAPH_0&amp;export=5&amp;w=650&amp;h=330" style="border: none;" height="330" width="650"></iframe>
-
-<small>Generally a weak comparision, yes, but is significant for our purpose.</small>
-
----
-
-# SOA vs. REST (2/2)
-
-In one of the largest independent and publicly available directories for APIs, the Programmableweb,
-the share of Internet APIs by technology in March 2014 is:
-
-![API protocols](http://www.bogotobogo.com/WebTechnologies/images/OpenAPI_RESTful/API_Protocols.png)
-
-REST (69%), SOAP (18%), JavaScript (5%), and XML-RPC (2%).
-
-<!--
-# REST is still on the Rise
-http://de.slideshare.net/programmableweb/web-api-growthsince2005
--->
-
----
-
-# Qualitative Advantages of REST over SOAP
-
-- Developers like REST because the learning curve is less steep.
-  - Web Services' contract first appraoch (early binding) is more complex.
-  - It requires a longer/ deeper toolchain to be equally productive.
-
-- Better client support in most languages.
-  - SOAP clients for PHP and NodeJS are still not on par with Java.
-
-- The whole footprint of SOAP is too big for mobile.
-  - Parsing of JSON is less compute and memory intensive than XML.
-  - Required technology stack is more complex.
-
----
-
-# Conclusions
-
-1. We saw an exponential growth of the number of offered WEB APIs.
-
-2. In the future of distributed systems computing, most likely only REST and SOA will be relevant
-for distributed system integration.
-
-3. SOAP will persist for specialized enterprise
-interfaces as part of SOAs and in B2B scenarios.
 
 ---
 
@@ -343,7 +235,7 @@ Consequence: Resources must describe their
 
 # Client State Machine Example
 
-<img style="max-width: 80%;" src="https://docs.google.com/drawings/d/1qjYy-MAiUOslhLPDZLuJCjjukyyyVdPWSxevPsjOuhY/pub?w=960&amp;h=720" alt="Client App State Machine">
+<img style="max-width: 80%;" src="images/client_app_state_machine.png" alt="Client App State Machine">
 
 <small>http://www.programmableweb.com/news/hypermedia-apis-benefits-hateoas/how-to/2014/02/27</small>
 
@@ -483,13 +375,13 @@ class: center, middle
 
 In the form which has been procalimed for decades ‒ probably yes.
 
-![Semantic Web Logo](http://bloghelpline.com/wp-content/uploads/2013/09/Logo_Semantic_Web.png)
+<img style="max-width: 50%;" src="images/Logo_Semantic_Web.png" alt="Semantic Web Logo">
 
 ---
 
 # The Semantic Web technology Stack
 
-![Semantic Web Logo](http://bnode.org/media/2009/07/08/semantic_web_technology_stack.png)
+![Stack](images/semantic_web_technology_stack.png)
 
 ---
 
@@ -797,7 +689,7 @@ More:
 
 To get from a Web of documents...
 
-![Web of Documents](http://www.bbc.co.uk/staticarchive/533355da9de4faf21572098cf6aafa5a97795bce.png)
+![Web of Documents](images/web_of_documents.png)
 
 <small>http://www.bbc.co.uk/staticarchive/533355da9de4faf21572098cf6aafa5a97795bce.png</small>
 
@@ -812,7 +704,7 @@ To get from a Web of documents...
 
 ...to a Web of data (facts and relations).
 
-![Web of Data](http://www.bbc.co.uk/staticarchive/392887acaaad47e534390f2c7d3910f2bf380a2e.png)
+![Web of Data](images/web_of_data.png)
 
 <small>http://www.bbc.co.uk/staticarchive/392887acaaad47e534390f2c7d3910f2bf380a2e.png</small>
 
@@ -1026,7 +918,7 @@ class: center, middle
 
 ---
 
-# About ![Hydra Core Logo](http://www.hydra-cg.com/img/logo.svg) Core
+# About ![Hydra Core Logo](images/hydra_logo.svg) Core
 
 Hydra is a vocabulary to describe hypermedia-driven Web APIs created by
 [Markus Lanthaler](http://www.markus-lanthaler.com/).
@@ -1109,21 +1001,10 @@ http://de.slideshare.net/lanthaler/the-web-is-changing-from-strings-to-things
 
 class: center, middle
 
-# The Web 3.0 is just around the corner
-
-and with this stuff you can be part of it.
-
----
-
-class: center, middle
-
-# Thank you
-
-<br>
 
 <small>
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
+  <img alt="Creative Commons License" style="border-width:0" src="images/cc_by-nc-sa.png" /></a><br />
   This work is licensed under a <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
   Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 </a>.
